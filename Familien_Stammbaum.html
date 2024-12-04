@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Familien Stammbaum</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .tree {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px 0;
+        }
+        .tree ul {
+            position: relative;
+            padding-top: 20px;
+            list-style-type: none;
+        }
+        .tree ul::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-top: 2px solid #ccc;
+            width: 50%;
+            height: 20px;
+        }
+        .tree li {
+            position: relative;
+            margin: 0 auto;
+            text-align: center;
+            list-style-type: none;
+        }
+        .tree li::before, .tree li::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 20px;
+            border-top: 2px solid #ccc;
+        }
+        .tree li::before {
+            left: -50%;
+            border-right: 2px solid #ccc;
+        }
+        .tree li::after {
+            right: -50%;
+            border-left: 2px solid #ccc;
+        }
+        .tree li:only-child::before, .tree li:only-child::after {
+            display: none;
+        }
+        .tree li:first-child::before, .tree li:last-child::after {
+            border: none;
+        }
+        .tree li div {
+            display: inline-block;
+            padding: 5px 10px;
+            background: #fff;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Familien Stammbaum</h1>
+    <div class="tree">
+        <ul>
+            <li>
+                <div>Ur-Ur-Urgroßeltern</div>
+                <ul>
+                    <li>
+                        <div>Ur-Urgroßeltern</div>
+                        <ul>
+                            <li>
+                                <div>Urgroßeltern</div>
+                                <ul>
+                                    <li>
+                                        <div>Großeltern</div>
+                                        <ul>
+                                            <li><div>Eltern</div></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
